@@ -44,6 +44,8 @@ public class Login extends javax.swing.JFrame {
         Cerrar = new javax.swing.JLabel();
         Minimizar = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -132,6 +134,17 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setText("USER:");
         Ingreso.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 50, 20));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setText("Register");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        Ingreso.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, -1, -1));
+        Ingreso.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, -1, -1));
+
         jPanel1.add(Ingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 600));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 600));
@@ -168,6 +181,11 @@ public class Login extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -217,8 +235,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 }
