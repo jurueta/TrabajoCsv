@@ -5,6 +5,7 @@
  */
 package Interfaz;
 
+import Clases.MetodosLogin;
 import Interfaz.Inventario;
 import java.io.File;
 import javax.swing.JOptionPane;
@@ -37,8 +38,8 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        Usuario = new javax.swing.JTextField();
-        Contraseña = new javax.swing.JPasswordField();
+        usuario = new javax.swing.JTextField();
+        contrasena = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         Cerrar = new javax.swing.JLabel();
@@ -83,14 +84,14 @@ public class Login extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(51, 51, 51));
         Ingreso.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 200, 30));
 
-        Usuario.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        Usuario.setForeground(new java.awt.Color(153, 153, 153));
-        Usuario.setBorder(null);
-        Ingreso.add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 150, 20));
+        usuario.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        usuario.setForeground(new java.awt.Color(153, 153, 153));
+        usuario.setBorder(null);
+        Ingreso.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 150, 20));
 
-        Contraseña.setForeground(new java.awt.Color(153, 153, 153));
-        Contraseña.setBorder(null);
-        Ingreso.add(Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 150, 30));
+        contrasena.setForeground(new java.awt.Color(153, 153, 153));
+        contrasena.setBorder(null);
+        Ingreso.add(contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 150, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Key_32px.png"))); // NOI18N
         Ingreso.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
@@ -166,13 +167,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_CerrarMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String Dato,Dato_2;
-        Dato = Usuario.getText();
-        Dato_2 = Contraseña.getText();
-         if("Administrador".equals(Dato) && "".equals(Dato_2)){
+
+         if(MetodosLogin.accesoUsuario(usuario, contrasena)){
              Inventario n = new Inventario();
              dispose();
-             n.show();
+             n.setVisible(true);
          }else{
              JOptionPane.showMessageDialog(null," Usuario o contraseña son incorrecto ");
          }   
@@ -224,10 +223,9 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cerrar;
-    private javax.swing.JPasswordField Contraseña;
     private javax.swing.JPanel Ingreso;
     private javax.swing.JLabel Minimizar;
-    private javax.swing.JTextField Usuario;
+    private javax.swing.JPasswordField contrasena;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -240,5 +238,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 }
